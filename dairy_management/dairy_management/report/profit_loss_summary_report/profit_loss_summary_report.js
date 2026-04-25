@@ -1,3 +1,3 @@
-frappe.query_reports["Profit & Loss Summary Report"] = {
+frappe.query_reports["Profit and Loss Summary Report"] = {
 	"filters": []
 };

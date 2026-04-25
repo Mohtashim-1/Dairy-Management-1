@@ -238,7 +238,7 @@ frappe.pages["herd-summary-report"].on_page_load = function (wrapper) {
 			};
 		}
 
-		if (name === "Milk Dispatch & Revenue Report") {
+		if (name === "Milk Dispatch and Revenue Report") {
 			const { keys, map } = aggregate_sum(rows, "log_date", ["revenue"], 45);
 			return {
 				...base_chart(),
@@ -324,7 +324,7 @@ frappe.pages["herd-summary-report"].on_page_load = function (wrapper) {
 			};
 		}
 
-		if (name === "Profit & Loss Summary Report") {
+		if (name === "Profit and Loss Summary Report") {
 			const { keys, map } = aggregate_sum(rows, "period", ["total_income", "net_profit_loss"], 24);
 			return {
 				...base_chart(),
