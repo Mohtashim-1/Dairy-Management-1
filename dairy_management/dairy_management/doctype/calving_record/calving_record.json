@@ -1,0 +1,40 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-26 03:20:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "dam",
+  "calving_date",
+  "calf",
+  "calving_ease",
+  "calf_sex",
+  "calf_weight_kg",
+  "stillbirth",
+  "complications"
+ ],
+ "fields": [
+  {"fieldname": "dam", "fieldtype": "Link", "label": "Dam", "options": "Animal", "reqd": 1, "description": "Mother"},
+  {"fieldname": "calving_date", "fieldtype": "Date", "label": "Calving Date", "reqd": 1, "description": "Date of birth"},
+  {"fieldname": "calf", "fieldtype": "Link", "label": "Calf", "options": "Animal", "reqd": 1, "description": "New calf record"},
+  {"fieldname": "calving_ease", "fieldtype": "Select", "label": "Calving Ease", "options": "Normal\nAssisted\nDifficult\nCaesarean", "reqd": 1, "description": "Difficulty score"},
+  {"fieldname": "calf_sex", "fieldtype": "Select", "label": "Calf Sex", "options": "Male\nFemale", "reqd": 1, "description": "Calf sex"},
+  {"fieldname": "calf_weight_kg", "fieldtype": "Float", "label": "Calf Weight Kg", "description": "Birth weight (kg)"},
+  {"fieldname": "stillbirth", "fieldtype": "Check", "label": "Stillbirth", "description": "Calf born dead?"},
+  {"fieldname": "complications", "fieldtype": "Small Text", "label": "Complications", "description": "Any issues noted"}
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-04-26 03:20:00.000000",
+ "modified_by": "Administrator",
+ "module": "Dairy Management",
+ "name": "Calving Record",
+ "owner": "Administrator",
+ "permissions": [{"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1}],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

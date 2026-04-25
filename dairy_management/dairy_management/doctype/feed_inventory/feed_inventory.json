@@ -1,0 +1,85 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-26 03:25:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-04-26 03:25:00.000000",
+ "modified_by": "Administrator",
+ "module": "Dairy Management",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "name": "Feed Inventory",
+ "field_order": [
+  "feed_item",
+  "feed_type",
+  "current_stock_kg",
+  "reorder_level_kg",
+  "supplier",
+  "cost_per_kg",
+  "last_purchased"
+ ],
+ "fields": [
+  {
+   "fieldname": "feed_item",
+   "fieldtype": "Link",
+   "label": "Feed Item",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "feed_type",
+   "fieldtype": "Select",
+   "label": "Feed Type",
+   "options": "Concentrate\nRoughage\nMineral\nSilage",
+   "reqd": 1
+  },
+  {
+   "fieldname": "current_stock_kg",
+   "fieldtype": "Float",
+   "label": "Current Stock Kg",
+   "reqd": 1
+  },
+  {
+   "fieldname": "reorder_level_kg",
+   "fieldtype": "Float",
+   "label": "Reorder Level Kg"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "cost_per_kg",
+   "fieldtype": "Currency",
+   "label": "Cost Per Kg"
+  },
+  {
+   "fieldname": "last_purchased",
+   "fieldtype": "Date",
+   "label": "Last Purchased"
+  }
+ ]
+}

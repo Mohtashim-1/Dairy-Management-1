@@ -1,0 +1,72 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-26 03:25:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-04-26 03:25:00.000000",
+ "modified_by": "Administrator",
+ "module": "Dairy Management",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "name": "Utility Log",
+ "field_order": [
+  "log_month",
+  "utility_type",
+  "units_consumed",
+  "cost",
+  "meter_reading"
+ ],
+ "fields": [
+  {
+   "fieldname": "log_month",
+   "fieldtype": "Date",
+   "label": "Log Month",
+   "reqd": 1
+  },
+  {
+   "fieldname": "utility_type",
+   "fieldtype": "Select",
+   "label": "Utility Type",
+   "options": "Electricity\nWater\nDiesel\nGas",
+   "reqd": 1
+  },
+  {
+   "fieldname": "units_consumed",
+   "fieldtype": "Float",
+   "label": "Units Consumed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cost",
+   "fieldtype": "Currency",
+   "label": "Cost",
+   "reqd": 1
+  },
+  {
+   "fieldname": "meter_reading",
+   "fieldtype": "Data",
+   "label": "Meter Reading"
+  }
+ ]
+}

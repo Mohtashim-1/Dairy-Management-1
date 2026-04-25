@@ -5,6 +5,13 @@ app_description = "app for dairy management"
 app_email = "shoaibmmohtashim973@gmail.com"
 app_license = "mit"
 
+fixtures = [
+	{
+		"doctype": "Custom HTML Block",
+		"filters": [["name", "in", ["Dairy Workspace Hub"]]],
+	}
+]
+
 # Apps
 # ------------------
 

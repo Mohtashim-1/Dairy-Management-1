@@ -1,0 +1,149 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:animal_id",
+ "creation": "2026-04-26 03:01:56.844978",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "animal_id",
+  "animal_name",
+  "breed",
+  "date_of_birth",
+  "sex",
+  "status",
+  "dam",
+  "sire",
+  "pen_assignment",
+  "purchase_date",
+  "purchase_price",
+  "rfid_tag",
+  "weight_kg",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "description": "Internal farm tag number",
+   "fieldname": "animal_id",
+   "fieldtype": "Data",
+   "label": "Animal ID",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "description": "Common name or alias",
+   "fieldname": "animal_name",
+   "fieldtype": "Data",
+   "label": "Animal Name",
+   "reqd": 1
+  },
+  {
+   "description": "Link to Breed master",
+   "fieldname": "breed",
+   "fieldtype": "Link",
+   "label": "Breed",
+   "options": "Animal Breed",
+   "reqd": 1
+  },
+  {
+   "description": "DOB for age calculation",
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sex",
+   "fieldtype": "Select",
+   "label": "Sex",
+   "options": "Male\nFemale",
+   "reqd": 1
+  },
+  {
+   "description": "Current lifecycle state",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Calf\nHeifer\nLactating\nDry\nDry Pregnant\nCulled",
+   "reqd": 1
+  },
+  {
+   "description": "Mother (self-link)",
+   "fieldname": "dam",
+   "fieldtype": "Link",
+   "label": "Dam",
+   "options": "Animal"
+  },
+  {
+   "description": "Father (self-link)",
+   "fieldname": "sire",
+   "fieldtype": "Link",
+   "label": "Sire",
+   "options": "Animal"
+  },
+  {
+   "description": "Current pen/barn location",
+   "fieldname": "pen_assignment",
+   "fieldtype": "Link",
+   "label": "Pen Assignment",
+   "options": "Pen"
+  },
+  {
+   "description": "Date animal was bought",
+   "fieldname": "purchase_date",
+   "fieldtype": "Date",
+   "label": "Purchase Date"
+  },
+  {
+   "description": "Acquisition cost",
+   "fieldname": "purchase_price",
+   "fieldtype": "Currency",
+   "label": "Purchase Price"
+  },
+  {
+   "description": "RFID / ear tag number",
+   "fieldname": "rfid_tag",
+   "fieldtype": "Data",
+   "label": "RFID Tag"
+  },
+  {
+   "description": "Latest recorded weight",
+   "fieldname": "weight_kg",
+   "fieldtype": "Float",
+   "label": "Weight (kg)"
+  },
+  {
+   "description": "Free-text notes",
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-04-26 03:01:56.844978",
+ "modified_by": "Administrator",
+ "module": "Dairy Management",
+ "name": "Animal",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "animal_name"
+}

@@ -1,0 +1,66 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"dm-header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Dairy Management</span>\",\"col\":12}},{\"id\":\"dm-block\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Dairy Workspace Hub\",\"col\":12}},{\"id\":\"dm-shortcut-animal\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Animal\",\"col\":3}},{\"id\":\"dm-shortcut-breed\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Animal Breed\",\"col\":3}},{\"id\":\"dm-shortcut-pen\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pen\",\"col\":3}},{\"id\":\"dm-shortcut-dashboard\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Herd Dashboard\",\"col\":3}}]",
+ "creation": "2026-04-26 03:14:00.000000",
+ "custom_blocks": [
+  {
+   "custom_block_name": "Dairy Workspace Hub",
+   "label": "Dairy Workspace Hub"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "agriculture",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Dairy Management",
+ "links": [],
+ "modified": "2026-04-26 03:14:00.000000",
+ "modified_by": "Administrator",
+ "module": "Dairy Management",
+ "name": "Dairy Management",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 20.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Animal",
+   "link_to": "Animal",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Animal Breed",
+   "link_to": "Animal Breed",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Pen",
+   "link_to": "Pen",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "Dashboard",
+   "label": "Herd Dashboard",
+   "link_to": "herd-summary-report",
+   "type": "Page"
+  }
+ ],
+ "title": "Dairy Management"
+}
