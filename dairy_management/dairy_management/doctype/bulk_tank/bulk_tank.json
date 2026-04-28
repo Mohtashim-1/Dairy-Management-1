@@ -4,9 +4,11 @@
  "creation": "2026-04-26 03:20:00.000000",
  "doctype": "DocType",
  "engine": "InnoDB",
- "field_order": ["tank_name"],
+ "field_order": ["tank_name", "snf_percent", "antibiotic"],
  "fields": [
-  {"fieldname": "tank_name", "fieldtype": "Data", "label": "Tank Name", "reqd": 1, "unique": 1}
+  {"fieldname": "tank_name", "fieldtype": "Data", "label": "Tank Name", "reqd": 1, "unique": 1},
+  {"fieldname": "snf_percent", "fieldtype": "Float", "label": "SNF Percent", "description": "Bulk solids-not-fat %"},
+  {"default": "0", "fieldname": "antibiotic", "fieldtype": "Check", "label": "Antibiotic", "description": "Tank milk is antibiotic-positive — dispatch blocked"}
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,

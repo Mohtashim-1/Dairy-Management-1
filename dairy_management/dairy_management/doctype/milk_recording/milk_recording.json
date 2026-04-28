@@ -10,9 +10,11 @@
   "session",
   "yield_litres",
   "fat_percent",
+  "snf_percent",
   "protein_percent",
   "lactose_percent",
   "scc",
+  "antibiotic",
   "parlour",
   "operator",
   "remarks"
@@ -23,9 +25,11 @@
   {"fieldname": "session", "fieldtype": "Select", "label": "Session", "options": "Morning\nEvening\nMidday", "reqd": 1, "description": "Milking session"},
   {"fieldname": "yield_litres", "fieldtype": "Float", "label": "Yield Litres", "reqd": 1, "description": "Milk collected (litres)"},
   {"fieldname": "fat_percent", "fieldtype": "Float", "label": "Fat Percent", "description": "Butterfat %"},
+  {"fieldname": "snf_percent", "fieldtype": "Float", "label": "SNF Percent", "description": "Solids-not-fat %"},
   {"fieldname": "protein_percent", "fieldtype": "Float", "label": "Protein Percent", "description": "Protein %"},
   {"fieldname": "lactose_percent", "fieldtype": "Float", "label": "Lactose Percent", "description": "Lactose %"},
   {"fieldname": "scc", "fieldtype": "Int", "label": "SCC", "description": "Somatic cell count (cells/mL)"},
+  {"default": "0", "fieldname": "antibiotic", "fieldtype": "Check", "label": "Antibiotic", "description": "Milk from treated animal / antibiotic-positive"},
   {"fieldname": "parlour", "fieldtype": "Link", "label": "Parlour", "options": "Parlour", "description": "Milking unit used"},
   {"fieldname": "operator", "fieldtype": "Link", "label": "Operator", "options": "Employee", "description": "ERPNext Employee link"},
   {"fieldname": "remarks", "fieldtype": "Small Text", "label": "Remarks", "description": "Quality flags or notes"}
