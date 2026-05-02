@@ -7,26 +7,99 @@
  "field_order": [
   "log_date",
   "tank",
+  "tank_capacity_litres",
   "quantity_litres",
   "temperature_c",
   "fat_percent",
+  "snf_percent",
   "scc",
+  "price_per_litre",
   "dispatched",
   "dispatch_litres",
-  "buyer",
-  "price_per_litre"
+  "buyer"
  ],
  "fields": [
-  {"fieldname": "log_date", "fieldtype": "Date", "label": "Log Date", "reqd": 1, "description": "Log date"},
-  {"fieldname": "tank", "fieldtype": "Link", "label": "Tank", "options": "Bulk Tank", "reqd": 1, "description": "Tank identifier"},
-  {"fieldname": "quantity_litres", "fieldtype": "Float", "label": "Quantity Litres", "reqd": 1, "description": "Milk volume in tank"},
-  {"fieldname": "temperature_c", "fieldtype": "Float", "label": "Temperature C", "reqd": 1, "description": "Tank temperature (°C)"},
-  {"fieldname": "fat_percent", "fieldtype": "Float", "label": "Fat Percent", "description": "Bulk fat %"},
-  {"fieldname": "scc", "fieldtype": "Int", "label": "SCC", "description": "Bulk SCC"},
-  {"fieldname": "dispatched", "fieldtype": "Check", "label": "Dispatched", "description": "Milk sent to buyer"},
-  {"fieldname": "dispatch_litres", "fieldtype": "Float", "label": "Dispatch Litres", "description": "Volume dispatched"},
-  {"fieldname": "buyer", "fieldtype": "Link", "label": "Buyer", "options": "Customer", "description": "ERPNext Customer"},
-  {"fieldname": "price_per_litre", "fieldtype": "Currency", "label": "Price Per Litre", "description": "Agreed rate"}
+  {
+   "fieldname": "log_date",
+   "fieldtype": "Date",
+   "label": "Log Date",
+   "reqd": 1,
+   "description": "Log date"
+  },
+  {
+   "fieldname": "tank",
+   "fieldtype": "Link",
+   "label": "Tank",
+   "options": "Bulk Tank",
+   "reqd": 1,
+   "description": "Tank identifier"
+  },
+  {
+   "fetch_from": "tank.capacity_litres",
+   "fieldname": "tank_capacity_litres",
+   "fieldtype": "Float",
+   "label": "Total Tank Capacity (L)",
+   "read_only": 1,
+   "description": "From Bulk Tank master"
+  },
+  {
+   "fieldname": "quantity_litres",
+   "fieldtype": "Float",
+   "label": "Quantity Litres",
+   "read_only": 1,
+   "description": "Sum of Milk Recording yield for this tank and date"
+  },
+  {
+   "fieldname": "temperature_c",
+   "fieldtype": "Float",
+   "label": "Temperature C",
+   "reqd": 1,
+   "description": "Tank temperature (°C)"
+  },
+  {
+   "fieldname": "fat_percent",
+   "fieldtype": "Float",
+   "label": "Fat Percent",
+   "description": "Bulk fat %"
+  },
+  {
+   "fieldname": "snf_percent",
+   "fieldtype": "Float",
+   "label": "SNF Percent",
+   "description": "Bulk SNF %"
+  },
+  {
+   "fieldname": "scc",
+   "fieldtype": "Int",
+   "label": "SCC",
+   "description": "Bulk SCC"
+  },
+  {
+   "fieldname": "price_per_litre",
+   "fieldtype": "Currency",
+   "label": "Price Per Litre",
+   "read_only": 1,
+   "description": "From Item Master (standard rate)"
+  },
+  {
+   "fieldname": "dispatched",
+   "fieldtype": "Check",
+   "label": "Dispatched",
+   "description": "Milk sent to buyer"
+  },
+  {
+   "fieldname": "dispatch_litres",
+   "fieldtype": "Float",
+   "label": "Dispatch Litres",
+   "description": "Volume dispatched"
+  },
+  {
+   "fieldname": "buyer",
+   "fieldtype": "Link",
+   "label": "Buyer",
+   "options": "Customer",
+   "description": "ERPNext Customer"
+  }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
@@ -36,7 +109,20 @@
  "module": "Dairy Management",
  "name": "Bulk Tank Log",
  "owner": "Administrator",
- "permissions": [{"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1}],
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",

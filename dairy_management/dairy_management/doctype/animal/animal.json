@@ -7,8 +7,10 @@
  "engine": "InnoDB",
  "field_order": [
   "animal_id",
+  "animal_item",
   "animal_name",
   "breed",
+  "breed_name",
   "date_of_birth",
   "sex",
   "status",
@@ -31,11 +33,20 @@
    "unique": 1
   },
   {
-   "description": "Common name or alias",
+   "description": "Animal identity from Item Master (stock / catalogue)",
+   "fieldname": "animal_item",
+   "fieldtype": "Link",
+   "label": "Animal Item",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "description": "Display name from linked Item",
+   "fetch_from": "animal_item.item_name",
    "fieldname": "animal_name",
    "fieldtype": "Data",
    "label": "Animal Name",
-   "reqd": 1
+   "read_only": 1
   },
   {
    "description": "Link to Breed master",
@@ -44,6 +55,14 @@
    "label": "Breed",
    "options": "Animal Breed",
    "reqd": 1
+  },
+  {
+   "description": "Breed name from Breed Master",
+   "fetch_from": "breed.breed_name",
+   "fieldname": "breed_name",
+   "fieldtype": "Data",
+   "label": "Breed Name",
+   "read_only": 1
   },
   {
    "description": "DOB for age calculation",
@@ -107,7 +126,7 @@
    "label": "RFID Tag"
   },
   {
-   "description": "Latest recorded weight",
+   "description": "Latest recorded weight (must be greater than zero when entered)",
    "fieldname": "weight_kg",
    "fieldtype": "Float",
    "label": "Weight (kg)"

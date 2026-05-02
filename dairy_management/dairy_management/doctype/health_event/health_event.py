@@ -7,5 +7,5 @@ from frappe.utils import add_days
 
 class HealthEvent(Document):
 	def validate(self):
-		if self.event_date and self.withdrawal_days:
-			self.milk_safe_date = add_days(self.event_date, self.withdrawal_days)
+		if self.event_date and self.withdrawal_days is not None:
+			self.milk_safe_date = add_days(self.event_date, int(self.withdrawal_days))

@@ -41,6 +41,7 @@
   "batch_no",
   "next_due",
   "administered_by",
+  "administered_by_name",
   "cost"
  ],
  "fields": [
@@ -99,6 +100,13 @@
    "fieldtype": "Link",
    "label": "Administered By",
    "options": "Employee"
+  },
+  {
+   "fetch_from": "administered_by.employee_name",
+   "fieldname": "administered_by_name",
+   "fieldtype": "Data",
+   "label": "Administrator Name",
+   "read_only": 1
   },
   {
    "fieldname": "cost",

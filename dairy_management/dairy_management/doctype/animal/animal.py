@@ -4,12 +4,22 @@
 import frappe
 from frappe import _
 from frappe.model.document import Document
+from frappe.utils import flt
 
 
 class Animal(Document):
 	def validate(self):
+		if not self.animal_item:
+			frappe.throw(_("Animal Item is required; select the Item from Item Master."))
 		self.validate_rfid_unique()
 		self.validate_pen_capacity()
+		self.validate_weight()
+
+	def validate_weight(self):
+		if self.weight_kg is None:
+			return
+		if flt(self.weight_kg) <= 0:
+			frappe.throw(_("Weight (kg) must be greater than zero when entered."))
 
 	def validate_rfid_unique(self):
 		rfid = (self.rfid_tag or "").strip()

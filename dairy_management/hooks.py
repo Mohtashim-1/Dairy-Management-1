@@ -11,6 +11,8 @@ fixtures = [
 		"filters": [["name", "in", ["Dairy Workspace Hub"]]],
 	}
 ]
+# When adding a new Dairy DocType: (1) add Workspace Link under Dairy Management → Link Cards
+#    (workspace JSON + content card name if new section), (2) add anchor to fixtures/custom_html_block.json hub HTML.
 
 # Apps
 # ------------------
@@ -155,23 +157,11 @@ fixtures = [
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"dairy_management.tasks.all"
-# 	],
-# 	"daily": [
-# 		"dairy_management.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"dairy_management.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"dairy_management.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"dairy_management.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"daily": [
+		"dairy_management.tasks.dairy_daily_alerts",
+	],
+}
 
 # Testing
 # -------

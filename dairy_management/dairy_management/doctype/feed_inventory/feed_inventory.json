@@ -32,6 +32,7 @@
  "name": "Feed Inventory",
  "field_order": [
   "feed_item",
+  "warehouse",
   "feed_type",
   "current_stock_kg",
   "reorder_level_kg",
@@ -48,6 +49,13 @@
    "reqd": 1
   },
   {
+   "description": "Stock balance is read from this warehouse (maintain stock via Stock Entry / Stock transactions only)",
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse"
+  },
+  {
    "fieldname": "feed_type",
    "fieldtype": "Select",
    "label": "Feed Type",
@@ -55,10 +63,12 @@
    "reqd": 1
   },
   {
+   "description": "Updated from Stock Ledger; do not edit manually",
    "fieldname": "current_stock_kg",
    "fieldtype": "Float",
    "label": "Current Stock Kg",
-   "reqd": 1
+   "read_only": 1,
+   "default": "0"
   },
   {
    "fieldname": "reorder_level_kg",
