@@ -14,6 +14,7 @@ class Animal(Document):
 		self.validate_rfid_unique()
 		self.validate_pen_capacity()
 		self.validate_weight()
+		self.validate_status_for_sex()
 
 	def validate_weight(self):
 		if self.weight_kg is None:
@@ -54,4 +55,15 @@ class Animal(Document):
 					int(capacity),
 					count_others + 1,
 				)
+			)
+
+	def validate_status_for_sex(self):
+		if (self.sex or "").strip().lower() != "male":
+			return
+		disallowed_statuses = {"Lactating", "Dry", "Dry Pregnant"}
+		if self.status in disallowed_statuses:
+			frappe.throw(
+				_(
+					"Status {0} is not allowed for Male animals. Please choose a valid status."
+				).format(frappe.bold(self.status))
 			)

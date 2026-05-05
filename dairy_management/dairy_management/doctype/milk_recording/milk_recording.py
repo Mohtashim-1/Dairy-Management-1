@@ -19,6 +19,8 @@ SAMPLE_NOTIFICATION_ROLES = ("Manufacturing User", "Stock Manager", "System Mana
 class MilkRecording(Document):
 	def validate(self):
 		self.validate_yield_positive()
+		self.validate_quality_values_non_negative()
+		self.validate_duplicate_entry()
 		self.validate_animal_lactating()
 		self.validate_milk_safe_gate()
 		self.validate_sample_rules()
@@ -68,6 +70,40 @@ class MilkRecording(Document):
 	def validate_sample_rules(self):
 		if cint(self.is_sample) and not (self.sample_id or "").strip():
 			frappe.throw(_("Sample ID is mandatory when Sample is checked."))
+
+	def validate_quality_values_non_negative(self):
+		quality_checks = [
+			("fat_percent", _("Fat Percent")),
+			("snf_percent", _("SNF Percent")),
+			("scc", _("SCC")),
+		]
+		for fieldname, label in quality_checks:
+			value = self.get(fieldname)
+			if value is None or value == "":
+				continue
+			if float(value) < 0:
+				frappe.throw(_("{0} cannot be negative.").format(label))
+
+	def validate_duplicate_entry(self):
+		if not (self.animal and self.recording_date and self.session):
+			return
+		duplicate_name = frappe.db.get_value(
+			"Milk Recording",
+			{
+				"animal": self.animal,
+				"recording_date": self.recording_date,
+				"session": self.session,
+				"docstatus": ["<", 2],
+				"name": ["!=", self.name],
+			},
+			"name",
+		)
+		if duplicate_name:
+			frappe.throw(
+				_(
+					"Duplicate milk collection is not allowed for the same Animal, Date, and Session. Existing entry: {0}"
+				).format(frappe.bold(duplicate_name))
+			)
 
 	def alert_low_yield(self):
 		if self.yield_litres is None:

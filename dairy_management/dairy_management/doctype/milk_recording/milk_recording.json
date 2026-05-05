@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2026-04-26 03:20:00.000000",
+ "creation": "2026-04-26 03:20:00",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -11,117 +11,124 @@
   "session",
   "yield_litres",
   "is_sample",
+  "column_break_amzr",
   "sample_id",
   "fat_percent",
   "snf_percent",
   "protein_percent",
   "lactose_percent",
+  "column_break_kjqu",
   "scc",
   "antibiotic",
   "parlour",
   "parlour_title",
   "operator",
+  "column_break_eood",
   "operator_name",
   "collected_tank",
   "remarks"
  ],
  "fields": [
   {
+   "description": "Date of milking",
    "fieldname": "recording_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Recording Date",
-   "reqd": 1,
-   "description": "Date of milking"
+   "reqd": 1
   },
   {
    "default": "09:00:00",
+   "description": "Time of milking / recording",
    "fieldname": "recording_time",
    "fieldtype": "Time",
+   "in_list_view": 1,
    "label": "Recording Time",
-   "reqd": 1,
-   "description": "Time of milking / recording"
+   "reqd": 1
   },
   {
+   "description": "Animal being milked",
    "fieldname": "animal",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Animal",
    "options": "Animal",
-   "reqd": 1,
-   "description": "Animal being milked"
+   "reqd": 1
   },
   {
+   "description": "Milking session",
    "fieldname": "session",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Session",
    "options": "Morning\nEvening\nMidday",
-   "reqd": 1,
-   "description": "Milking session"
+   "reqd": 1
   },
   {
+   "description": "Milk collected (litres)",
    "fieldname": "yield_litres",
    "fieldtype": "Float",
    "label": "Yield Litres",
-   "reqd": 1,
-   "description": "Milk collected (litres)"
+   "reqd": 1
   },
   {
    "default": "0",
+   "description": "Sample collected for lab / QA",
    "fieldname": "is_sample",
    "fieldtype": "Check",
-   "label": "Sample",
-   "description": "Sample collected for lab / QA"
+   "label": "Sample"
   },
   {
    "depends_on": "eval:doc.is_sample",
+   "description": "Unique sample reference when Sample is checked",
    "fieldname": "sample_id",
    "fieldtype": "Data",
    "label": "Sample ID",
-   "mandatory_depends_on": "eval:doc.is_sample",
-   "description": "Unique sample reference when Sample is checked"
+   "mandatory_depends_on": "eval:doc.is_sample"
   },
   {
+   "description": "Butterfat %",
    "fieldname": "fat_percent",
    "fieldtype": "Float",
-   "label": "Fat Percent",
-   "description": "Butterfat %"
+   "label": "Fat Percent"
   },
   {
+   "description": "Solids-not-fat %",
    "fieldname": "snf_percent",
    "fieldtype": "Float",
-   "label": "SNF Percent",
-   "description": "Solids-not-fat %"
+   "label": "SNF Percent"
   },
   {
+   "description": "Protein %",
    "fieldname": "protein_percent",
    "fieldtype": "Float",
-   "label": "Protein Percent",
-   "description": "Protein %"
+   "label": "Protein Percent"
   },
   {
+   "description": "Lactose %",
    "fieldname": "lactose_percent",
    "fieldtype": "Float",
-   "label": "Lactose Percent",
-   "description": "Lactose %"
+   "label": "Lactose Percent"
   },
   {
+   "description": "Somatic cell count (cells/mL)",
    "fieldname": "scc",
    "fieldtype": "Int",
-   "label": "SCC",
-   "description": "Somatic cell count (cells/mL)"
+   "label": "SCC"
   },
   {
    "default": "0",
+   "description": "Milk from treated animal / antibiotic-positive",
    "fieldname": "antibiotic",
    "fieldtype": "Check",
-   "label": "Antibiotic",
-   "description": "Milk from treated animal / antibiotic-positive"
+   "label": "Antibiotic"
   },
   {
+   "description": "Milking unit used",
    "fieldname": "parlour",
    "fieldtype": "Link",
    "label": "Parlour",
-   "options": "Parlour",
-   "description": "Milking unit used"
+   "options": "Parlour"
   },
   {
    "fetch_from": "parlour.parlour_name",
@@ -131,11 +138,11 @@
    "read_only": 1
   },
   {
+   "description": "Milking operator",
    "fieldname": "operator",
    "fieldtype": "Link",
    "label": "Operator",
-   "options": "Employee",
-   "description": "Milking operator"
+   "options": "Employee"
   },
   {
    "fetch_from": "operator.employee_name",
@@ -145,23 +152,36 @@
    "read_only": 1
   },
   {
+   "description": "Bulk tank where this milk was collected",
    "fieldname": "collected_tank",
    "fieldtype": "Link",
    "label": "Collected Tank",
    "options": "Bulk Tank",
-   "description": "Bulk tank where this milk was collected"
+   "reqd": 1
   },
   {
+   "description": "Quality flags or notes",
    "fieldname": "remarks",
    "fieldtype": "Small Text",
-   "label": "Remarks",
-   "description": "Quality flags or notes"
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "column_break_amzr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_kjqu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_eood",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-26 03:20:00.000000",
+ "modified": "2026-05-06 03:50:50.474810",
  "modified_by": "Administrator",
  "module": "Dairy Management",
  "name": "Milk Recording",

@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:breed_name",
  "creation": "2026-04-26 03:02:35.813864",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -15,6 +16,7 @@
    "description": "e.g. Holstein, Jersey, Sahiwal",
    "fieldname": "breed_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Breed Name",
    "reqd": 1,
    "unique": 1
@@ -23,6 +25,7 @@
    "description": "Animal species",
    "fieldname": "species",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Species",
    "options": "Bovine\nCaprine\nOvine",
    "reqd": 1
@@ -43,10 +46,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-26 03:02:35.813864",
+ "modified": "2026-05-06 03:42:01.990028",
  "modified_by": "Administrator",
  "module": "Dairy Management",
  "name": "Animal Breed",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -66,5 +70,6 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "breed_name"
+ "title_field": "breed_name",
+ "track_changes": 1
 }
